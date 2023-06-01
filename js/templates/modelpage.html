@@ -14,8 +14,7 @@
     </head>
     <div class="main">
     <div class="content">
-      <h1 class="title">Spotify Model</h1>
-      <div class="menu">
+      <div class="navbar">
         <ul>
           <li> <a href="/">Home</a></li>
           <li> <a href="/KMeans.html">Algorithm</a></li>
@@ -24,6 +23,7 @@
           <li> <a href="/sources.html">Sources</a></li>
       </ul>
       </div>
+      <h1 class="title">Song Recommendations</h1>
 <body>
   
   <form action="/recommend_songs", method="POST">
@@ -32,9 +32,17 @@
     <input type="button" value="Submit">
   </form>
   
+
+<!-- For each song - album_url pair in the list of tuples, the album_url is placed into the song_image class & song name is placed in a p tag -->
   <h1>Results:</h1>
-  {% for song in results %}
-  <p>{{ song }}</p>
+  {% for song, album_url in results %}
+  <div class="song-container">
+    <div class="song-image">
+      <img src="{{ album_url }}" alt=""Song Image">
+
+    </div>
+    <p>{{ song }}</p>
+  </div>
   {% endfor %}
   
 </body>
