@@ -1,12 +1,11 @@
-*{
+<style>
+  * {
     margin: 0;
     padding: 0;
   }
-    
-    
+
   html,
-  body
-  {
+  body {
     height: 100%;
     width: 100%;
     padding: 0;
@@ -14,50 +13,43 @@
   }
 
   h1, p, label {
-    color: white;
+    color: #5598df;
   }
 
-  .main{
-    width: 100%;
-    background: url("../static/images/spotify-background.jpg");
-    background-position: center;
-    background-size: cover;
-    height: 200vh;
-    }
+  .navbar {
+    width: 600px;
+    float: right;
+    height: 99px;
+    position: relative;
+    z-index: 10;
+    color: #5598df;
+  }
+    
+  ul {
+    list-style: none;
+    padding: 1;
+    margin: 0;
+  }
+    
+  ul li {
+    display: inline-block;
+  }
+    
+  ul li a {
+    text-decoration: none;
+    color: #229798;
+    display: block;
+    padding: 25px 20px;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.2s ease-in-out;
+  }
+    
+  ul li a:hover {
+    color: #0703dd;
+  }
 
-    .menu{
-      width: 600px;
-      float: right;
-      height: 99px;
-      position: relative;
-      z-index: 10;
-    }
-    
-    .ul{
-      list-style: none;
-      padding: 1;
-      margin: 0;
-    }
-    
-    ul li{
-     display: inline-block
-    }
-    
-    ul li a{
-      text-decoration: none;
-      color: #ffffff;
-      display: block;
-      padding: 25px 20px;
-      font-family: Arial;
-      font-weight: bold;
-      transition: 0.2s ease-in-out;
-    }
-    
-    ul li a:hover{
-      color: green;
-    }
-
-.title{
+  .title {
     text-align: center;
     padding-left: 250px;
     padding-bottom: 25px;
@@ -65,31 +57,28 @@
     font-family: Arial;
     letter-spacing: 1.2px;
     line-height: 30px;
-    color: #ffffff;
-    }
+    color: #5598df;
+  }
 
-    .input-header{
-      margin: 0 0 0 10px;
-      padding: 0;
-      color:#1118de;
-      font-size: 30px;
+  .input-header {
+    margin: 0 0 0 10px;
+    padding: 0;
+    color: #5598df;
+    font-size: 30px;
+  }
 
-    }
+  .form {
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    font-size: 14pt;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: (-50%,-50%);
+  }
 
-    .form{
-      margin-left: auto;
-      margin-right: auto;
-      height:200px;
-      font-size:14pt;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: (-50%,-50%);
-
-
-    }
-
-    .button{
+  .button {
     display: inline-block;
     background-color: #38d875;
     padding: 20px;
@@ -99,4 +88,21 @@
     border: 4px double #1118de; /* add this line */
     border-radius: 10px; /* add this line */
     font-size: 28px; /* add this line */
-    }
+  }
+
+  .song-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .song-image {
+    margin-left: 500px;
+    order: 2
+  }
+
+  p {
+    order:1;
+  }
+
+</style>
