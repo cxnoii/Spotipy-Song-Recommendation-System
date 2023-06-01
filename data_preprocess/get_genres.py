@@ -21,7 +21,7 @@ import spotipy.util as util
 # +-----------------+
 # | Reading in data |
 # +-----------------+
-path = Path() / "Data" / "tenyear_cleaned_for_kmeans.csv" 
+path = Path() / "Data" / "tenyear_cleaned.csv" 
 path_id_genre = Path() / "Data" / "id_genres.csv"
 tracks_df = pd.read_csv(path)
 column_names = tracks_df.columns
@@ -64,14 +64,21 @@ def main():
     response_json = response.json()
     access_token = response_json['access_token']
 
-    start_time = time.time()
-    genres_list = get_genres(track_ids)
+    #clean this later, but this is extracts album url: there are 3 sizes, working with the first one rn
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth())
+    search = sp.track('11dFghVXANMlKmJXsNCbNl')
+    album = search['album']['images'][1]['url']
+    pprint(album)
 
-    #Create a dataframe with track_id and genres_list  
-    id_genres_df = pd.DataFrame({"id": track_ids, "genres": genres_list})
-    id_genres_df.to_csv(path_id_genre)
 
-    print("--- %s seconds ---" % (time.time() - start_time))
+    # start_time = time.time()
+    # # genres_list = get_genres(track_ids)
+
+    # # #Create a dataframe with track_id and genres_list  
+    # # id_genres_df = pd.DataFrame({"id": track_ids, "genres": genres_list})
+    # # id_genres_df.to_csv(path_id_genre)
+
+    # print("--- %s seconds ---" % (time.time() - start_time))
 
 if __name__ == '__main__':
     main()
