@@ -18,7 +18,7 @@ from spotipy.oauth2 import SpotifyOAuth
 import spotipy.util as util
 
 
-path = Path() / "Data" / "tenyear_cleaned"
+path = Path() / "Data" / "tenyear_cleaned.csv"
 tracks_df = pd.read_csv(path)
 column_names = tracks_df.columns
 index = tracks_df.index
@@ -90,7 +90,9 @@ def recommended_songs_id(predictions, song_feature1, song_feature2, track_list):
     feature2 = predictions['energy']
     data_points = np.column_stack([feature1, feature2])
     ckdtree = scipy.spatial.cKDTree(data_points)
-    song_recommendations = ckdtree.query([song_feature1, song_feature2],k=10)[1]
+
+    #k is the value of songs that it will recommend
+    song_recommendations = ckdtree.query([song_feature1, song_feature2],k=2)[1]
 
     song_ids = track_list.iloc[song_recommendations,:].index.to_list()
 
@@ -100,25 +102,18 @@ def recommended_songs_id(predictions, song_feature1, song_feature2, track_list):
 def get_song_info(song_id_list):
     sp = spotipy.Spotify(auth_manager=SpotifyOAuth())
     recommended_songs_list = []
+    album_urls_list = []
     for id in song_id_list:
         track = sp.track(id)
         song_name = track["name"]
         song_artist = track["artists"][0]["name"]
-        song_album = track["album"]["name"]
+        album_url = track['album']['images'][1]['url']
+
         recommended_song = f"{song_name} by {song_artist}"
         recommended_songs_list.append(recommended_song)
+        album_urls_list.append(album_url)
     
-    return recommended_songs_list
-
-# def get_genres(track_id):
-#     genres_list = []
-#     sp = spotipy.Spotify(auth_manager=SpotifyOAuth())
-#     search = sp.track(track_id)
-#     artist_id = search['album']['artists'][0]['id']
-    
-#     artist_search = sp.artist(artist_id)
-#     genres = artist_search['genres']
-
+    return recommended_songs_list, album_urls_list
 
 
 #+----------------------------------------------------+
@@ -145,10 +140,13 @@ def recommend_songs(song_name):
     df_with_user_song = add_song_to_df(track_features, tracks_df)
     predictions_df = run_kmeans(df_with_user_song, track_id)
     song_ids = recommended_songs_id(predictions_df, song_feature1, song_feature2, df_with_user_song)
-    recommended_songs = get_song_info(song_ids)
-    print(song_ids)
+    recommended_songs, album_urls = get_song_info(song_ids)
 
-    return recommended_songs
+    #Printing to console for logging purposes
+    print(recommended_songs)
+    print(album_urls)
+
+    return recommended_songs, album_urls
 
 #if you're running just this script, you need to pass in a song name to recommend_songs in this format 
 # {song_name} by {artist_name}
