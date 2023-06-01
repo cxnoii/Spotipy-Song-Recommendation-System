@@ -17,12 +17,16 @@ def Kmeans():
 def modelpage():
     return render_template("modelpage.html")
 
+#After pressing submit with song, this url runs the spotipyxx script to return song names and album urls
 @app.route("/recommend_songs", methods=['POST'])
 def process_input():
     input_data = request.form['input']
-    recommended_songs = spotipyxx.recommend_songs(input_data)
+    recommended_songs, album_urls = spotipyxx.recommend_songs(input_data)
+
+    #Creates a list of tuples with recommended songs and album urls for ease of tag creations (see modelpage.html)
+    song_with_url = list(zip(recommended_songs, album_urls))
     
-    return render_template("/modelpage.html", results=recommended_songs)
+    return render_template("/modelpage.html", results=song_with_url)
 
 @app.route("/charts.html")
 def charts():
