@@ -18,7 +18,7 @@ from spotipy.oauth2 import SpotifyOAuth
 import spotipy.util as util
 
 
-path = Path() / "Data" / "tenyear_cleaned_for_kmeans.csv"
+path = Path() / "Data" / "tenyear_cleaned"
 tracks_df = pd.read_csv(path)
 column_names = tracks_df.columns
 index = tracks_df.index
