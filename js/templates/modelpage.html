@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head style="background-color: #151515;">
     <style>
         h1 {
           text-align: left;
         }
-    </style>
+        </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Spotify Model</title>
     <link rel="stylesheet" type="text/css" href="../static/modelpage.css">
-    </head>
-    <div class="main">
+  </head>
+
+
+  <div class="main">
     <div class="content">
       <div class="navbar">
         <ul>
@@ -21,19 +23,21 @@
           <li> <a href="/modelpage.html">Model</a></li>
           <li> <a href="/charts.html">Charts</a></li>
           <li> <a href="/sources.html">Sources</a></li>
-      </ul>
+        </ul>
       </div>
-      <h1 class="title">Song Recommendations</h1>
-<body>
-  
-  <form action="/recommend_songs", method="POST">
-    <label for="input">Enter a Song: ({song_title} by {artist})</label><br>
-    <input type="text" id="input" name="input"><br>
-    <input type="button" value="Submit">
-  </form>
-  
 
-<!-- For each song - album_url pair in the list of tuples, the album_url is placed into the song_image class & song name is placed in a p tag -->
+      <h1 class="title">Song Recommendations</h1>
+      <body>
+      <section class = "webdesigntuts-workshop">
+        <form action="/recommend_songs", method="POST">
+          <input type="search" id="input" name="input" placeholder="{song} by {artist}"><br>
+          <!-- <input type="submit" class = "button-21" value="Recommend songs"> -->
+    </form>
+    
+  </section>
+  
+  
+  <!-- For each song - album_url pair in the list of tuples, the album_url is placed into the song_image class & song name is placed in a p tag -->
   <h1>Results:</h1>
   {% for song, album_url in results %}
   <div class="song-container">
@@ -49,3 +53,10 @@
 
   
 </div>
+
+<!-- <body>
+  <form action="/recommend_songs", method="POST">
+    <label for="input">Enter a Song: ({song_title} by {artist})</label><br>
+    <input type="text" id="input" name="input"><br>
+    <input type="submit" class = "button-21" value="Recommend songs">
+  </form> -->
