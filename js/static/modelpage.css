@@ -9,7 +9,6 @@
     height: 100%;
     width: 100%;
     padding: 0;
-    margin: 0 auto;
     background-color: #151515;
   }
 
@@ -50,61 +49,20 @@
     color: #0703dd;
   }
 
-  .title {
-    text-align: center;
-    padding-left: 250px;
-    padding-bottom: 25px;
-    padding-top: 100px;
-    font-family: Arial;
-    letter-spacing: 1.2px;
-    line-height: 30px;
-    color: #5598df;
-  }
-
-  .input-header {
-    margin: 0 0 0 10px;
-    padding: 0;
-    color: #5598df;
-    font-size: 30px;
-  }
-
-  .form {
-    margin-left: auto;
-    margin-right: auto;
-    height: 200px;
-    font-size: 14pt;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: (-50%,-50%);
-  }
-
-  .button {
-    display: inline-block;
-    background-color: #38d875;
-    padding: 20px;
-    width: 200px;
-    color: #1118de;
-    text-align: center;
-    border: 4px double #1118de; /* add this line */
-    border-radius: 10px; /* add this line */
-    font-size: 28px; /* add this line */
-  }
 
   .song-container {
-    position: relative;
     display: flex;
     align-items: center;
   }
 
   .song-image {
-    margin-left: 500px;
-    order: 2
+    margin-right: -1050px;
   }
 
-  p {
-    order:1;
+  .song-image img {
+    margin-left: 1200px;
   }
+  
 
 /* Search bar */
 @import url(https://fonts.googleapis.com/css?family=Cabin:400);

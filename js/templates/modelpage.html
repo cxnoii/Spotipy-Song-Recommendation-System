@@ -36,11 +36,12 @@
     <!-- For each song - album_url pair in the list of tuples, the album_url is placed into the song_image class & song name is placed in a p tag -->
     {% for song, album_url in results %}
     <div class="song-container">
+
       <div class="song-image">
-        <img src="{{ album_url }}" alt=""Song Image">
-  
+        <img src="{{ album_url }}" alt="Song Image">
       </div>
-      <p>{{ song }}</p>
+
+        <p>{{ song }}</p>
     </div>
     {% endfor %}
 
@@ -52,10 +53,3 @@
 
   
 </div>
-
-<!-- <body>
-  <form action="/recommend_songs", method="POST">
-    <label for="input">Enter a Song: ({song_title} by {artist})</label><br>
-    <input type="text" id="input" name="input"><br>
-    <input type="submit" class = "button-21" value="Recommend songs">
-  </form> -->
