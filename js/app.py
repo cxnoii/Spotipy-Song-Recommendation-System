@@ -28,10 +28,6 @@ def process_input():
     
     return render_template("/modelpage.html", results=song_with_url)
 
-@app.route("/charts.html")
-def charts():
-    return render_template("charts.html")
-
 @app.route("/sources.html")
 def sources():
     return render_template("sources.html")

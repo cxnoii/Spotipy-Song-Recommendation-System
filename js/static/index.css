@@ -9,15 +9,9 @@ body {
   height: 100%;
   width: 100%;
   padding: 0;
-  margin: 0 auto;
   background-color: #151515;
 }
 
-.menu::after{
-  content:"";
-  clear:both;
-  display:table;
-}
 
 .navbar{
   width: 1200px;
