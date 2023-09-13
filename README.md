@@ -1,8 +1,5 @@
-# Project-4
-# Music recommendation 
+# Spotipy Song Recommendation System
  
-
-
 Members:
 - Raphael Tran 
 - David Dixon 
@@ -23,7 +20,7 @@ Overall, the development of song and playlist prediction using machine learning 
 
 # Project Overview
 
-The purpose of this project is to create an application to recommend Spotify songs to users based on their songs preferences. Songs found within the Spotify database have a number of characteristics that we will be analyzing using Machine Learning. 
+The purpose of this project is to use an unsupervised learning model to create an application to recommend Spotify songs to a user. Songs found within the Spotify database have a number of characteristics that we will be analyzing using Machine Learning. 
 
 
 # Research Questions
@@ -72,7 +69,7 @@ Also, Valence is positively correlated with Danceability and energy. Considering
 
 From the datas above, here a visualization how Energy and Loudness are positively correlated.
 
-## What artist do people listen to ?
+## What artists do people listen to?
 
 ![image](https://user-images.githubusercontent.com/115199874/229963812-4f369422-6037-4c8f-a15b-12bfb25e4aa0.png)
 
