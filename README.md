@@ -1,11 +1,3 @@
-# Spotipy Song Recommendation System
- 
-Members:
-- Raphael Tran 
-- David Dixon 
-- Nicholas Dao
-- Patricia Roa 
-
 # Project Overview
 
 The purpose of this project is to use an unsupervised learning model to create an application to recommend songs that are similar to the song the user inputs. A KMeans clustering algorithm will be used in order to cluster songs based on audio features that will be obtained from the Spotify API. 
