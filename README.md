@@ -6,6 +6,10 @@ Members:
 - Nicholas Dao
 - Patricia Roa 
 
+# Project Overview
+
+The purpose of this project is to use an unsupervised learning model to create an application to recommend songs that are similar to the song the user inputs. A KMeans clustering algorithm will be used in order to cluster songs based on audio features that will be obtained from the Spotify API. 
+
 # Background
 
 Song and playlist prediction using machine learning is an emerging field that aims to provide personalized music recommendations to users based on their listening habits and preferences. The idea behind this technology is to analyze large amounts of data on a user's listening history, such as the songs they have played, skipped, or added to their playlists, and use this information to predict the types of songs and playlists that they will enjoy in the future.
@@ -18,9 +22,6 @@ Once a machine learning model has been trained, it can be used to predict the ty
 
 Overall, the development of song and playlist prediction using machine learning has the potential to revolutionize the way that people discover and enjoy new music. By providing personalized recommendations based on individual listening habits and preferences, this technology can help users to discover new artists and genres, and to create playlists that reflect their unique musical tastes and moods.
 
-# Project Overview
-
-The purpose of this project is to use an unsupervised learning model to create an application to recommend Spotify songs to a user. Songs found within the Spotify database have a number of characteristics that we will be analyzing using Machine Learning. 
 
 
 # Research Questions
@@ -29,8 +30,8 @@ The purpose of this project is to use an unsupervised learning model to create a
 
 # Machine Learning 
 
-# Data analysis
-## Music attributes
+## The Dataset
+
 To have a better understanding of our datas, we have only chosen a specific timeline which is from 2010 to 2020. To find out how people listen to their favorite songs, we started to analyze the attributes over the years. 
 
 Before any explanation, let's define the different attributes : 
@@ -45,9 +46,6 @@ Before any explanation, let's define the different attributes :
 - Tempo : The overall estimated tempo of a track in beats per minute (BPM)
 
 ![image](https://user-images.githubusercontent.com/115199874/229994975-89a45f07-92a1-442a-ba27-436cb222a385.png)
-
-
-
 
 
 What does the graph tell us ?
