@@ -2,7 +2,7 @@
 
 The purpose of this project is to use an unsupervised learning model to create an application to recommend songs that are similar to the song the user inputs. A KMeans clustering algorithm will be used in order to cluster songs based on audio features that will be obtained from the Spotify API. 
 
-![spotify-logo-1920x1080-2](https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/06998647-ad35-455e-8277-0fbbcec62e4c)
+![The_Story_of_Spotify_Personas](https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/00834c05-4068-4f1b-9d16-f4915cc4d76d)
 
 # Background
 
