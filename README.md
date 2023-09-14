@@ -2,6 +2,8 @@
 
 The purpose of this project is to use an unsupervised learning model to create an application to recommend songs that are similar to the song the user inputs. A KMeans clustering algorithm will be used in order to cluster songs based on audio features that will be obtained from the Spotify API. 
 
+![The_Story_of_Spotify_Personas](https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/473b2874-f9f8-44b0-ad8b-b7f56aba7126)
+
 # Background
 
 Song and playlist prediction using machine learning is an emerging field that aims to provide personalized music recommendations to users based on their listening habits and preferences. The idea behind this technology is to analyze large amounts of data on a user's listening history, such as the songs they have played, skipped, or added to their playlists, and use this information to predict the types of songs and playlists that they will enjoy in the future.
