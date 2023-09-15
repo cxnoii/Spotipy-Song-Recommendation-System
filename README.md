@@ -1,5 +1,11 @@
 # Project Overview
 
+Members:
+* Raphael Tran
+* David Dixon
+* Nicholas Dao
+* Patricia Roa
+ 
 The purpose of this project is to use an unsupervised learning model to create an application to recommend songs that are similar to the song the user inputs. A KMeans clustering algorithm will be used in order to cluster songs based on audio features that will be obtained from the Spotify API. 
 
 <p align="center">
@@ -21,25 +27,24 @@ Overall, the development of song and playlist prediction using machine learning 
 
 
 # Research Questions
-1. What is the most popular type of music ?
+1. What is the most popular type of music?
 2. Based on user preferences, can we predict other songs that users may enjoy?
 
 # Machine Learning 
 
 ## The Dataset
+The Spotify dataset that we chose contains songs from the years 1921-2020. We chose to focus on a subset of the data, usings songs from the years 2010-2020 in order to relieve tension on the KMeans clustering algorithm. The Spotify API has a large variety of features documented for each track, such as the key signature, liveliness, mode, etc. Only numerical values were kept for the algorithm to consider. Listed below are the final audio features that were kept in the dataset for clustering.
 
-To have a better understanding of our datas, we have only chosen a specific timeline which is from 2010 to 2020. To find out how people listen to their favorite songs, we started to analyze the attributes over the years. 
-
-Before any explanation, let's define the different attributes : 
+Audio Features:
 - Valence : Spotify uses the word “valence” to measure whether a song is likely to make someone feel happy (higher valence) or sad (lower valence).
-- Instrumentalness : This value represents the amount of vocals in the song. The closer it is to 1.0, the more instrumental the song is.
-- Liveness : This value describes the probability that the song was recorded with a live audience. According to the official documentation “a value above 0.8 provides strong likelihood that the track is live”.
-- Speechiness : “Speechiness detects the presence of spoken words in a track”. If the speechiness of a song is above 0.66, it is probably made of spoken words, a score between 0.33 and 0.66 is a song that may contain both music and words, and a score below 0.33 means the song does not have any speech.
-- Acousticness : This value describes how acoustic a song is. A score of 1.0 means the song is most likely to be an acoustic one.
-- Energy : “(energy) represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy”.
-- Danceability : “Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable”.
-- Loudness :  It refers to how loud or soft a sound seems to a listener. The loudness of sound is determined, in turn, by the intensity of the sound waves.
-- Tempo : The overall estimated tempo of a track in beats per minute (BPM)
+- Instrumentalness : Represents the amount of vocals in the song. The closer it is to 1.0, the more instrumental the song is.
+- Liveness : Describes the probability that the song was recorded with a live audience. According to the official documentation “a value above 0.8 provides strong likelihood that the track is live”.
+- Speechiness : Detects the presence of spoken words in a track. If the speechiness of a song is above 0.66, it is probably made of spoken words, a score between 0.33 and 0.66 is a song that may contain both music and words, and a score below 0.33 means the song does not have any speech.
+- Acousticness : Describes how acoustic a song is. A score of 1.0 means the song is most likely to be an acoustic one.
+- Energy : Represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy.
+- Danceability : Describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.
+- Loudness : Refers to how loud or soft a sound seems to a listener. The loudness of sound is determined, in turn, by the intensity of the sound waves.
+- Tempo : The overall estimated tempo of a track in beats per minute (BPM).
 
 ![image](https://user-images.githubusercontent.com/115199874/229994975-89a45f07-92a1-442a-ba27-436cb222a385.png)
 
