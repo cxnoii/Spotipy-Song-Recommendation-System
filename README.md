@@ -1,13 +1,16 @@
-# Project-4
-# Music recommendation 
- 
-
+# Project Overview
 
 Members:
-- Raphael Tran 
-- David Dixon 
-- Nicholas Dao
-- Patricia Roa 
+* Raphael Tran
+* David Dixon
+* Nicholas Dao
+* Patricia Roa
+ 
+The purpose of this project is to use an unsupervised learning model to create an application to recommend songs that are similar to the song the user inputs. A KMeans clustering algorithm will be used in order to cluster songs based on audio features that will be obtained from the Spotify API. 
+
+<p align="center">
+<img src="https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/00834c05-4068-4f1b-9d16-f4915cc4d76d" width="350" height="200">
+</p>
 
 # Background
 
@@ -21,37 +24,32 @@ Once a machine learning model has been trained, it can be used to predict the ty
 
 Overall, the development of song and playlist prediction using machine learning has the potential to revolutionize the way that people discover and enjoy new music. By providing personalized recommendations based on individual listening habits and preferences, this technology can help users to discover new artists and genres, and to create playlists that reflect their unique musical tastes and moods.
 
-# Project Overview
-
-The purpose of this project is to create an application to recommend Spotify songs to users based on their songs preferences. Songs found within the Spotify database have a number of characteristics that we will be analyzing using Machine Learning. 
 
 
 # Research Questions
-1. What is the most popular type of music ?
+1. What is the most popular type of music?
 2. Based on user preferences, can we predict other songs that users may enjoy?
 
-# Machine Learning 
+# The Dataset
+The Spotify dataset that we chose contains songs from the years 1921-2020. We chose to focus on a subset of the data, usings songs from the years 2010-2020 in order to relieve tension on the KMeans clustering algorithm. The Spotify API has a large variety of features documented for each track, such as the key signature, liveliness, mode, etc. Only numerical values were kept for the algorithm to consider. Listed below are the final audio features that were kept in the dataset for clustering.
 
-# Data analysis
-## Music attributes
-To have a better understanding of our datas, we have only chosen a specific timeline which is from 2010 to 2020. To find out how people listen to their favorite songs, we started to analyze the attributes over the years. 
+Audio Features:
+- _id_ : Unique identifier for each track.
+- _Acousticness_ : Describes how acoustic a song is. A score of 1.0 means the song is most likely to be an acoustic one.
+- _Danceability_ : Describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.
+- _Duration_: Length of the song in milliseconds (ms).
+- _Energy_ : Represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy.
+- _Instrumentalness_ : Represents the amount of vocals in the song. The closer it is to 1.0, the more instrumental the song is.
+- _Liveness_ : Describes the probability that the song was recorded with a live audience. According to the official documentation “a value above 0.8 provides strong likelihood that the track is live”.
+- _Loudness_ : Refers to how loud or soft a sound seems to a listener. The loudness of sound is determined, in turn, by the intensity of the sound waves.
+- _Speechiness_ : Detects the presence of spoken words in a track. If the speechiness of a song is above 0.66, it is probably made of spoken words, a score between 0.33 and 0.66 is a song that may contain both music and words, and a score below 0.33 means the song does not have any speech.
+- _Tempo_ : The overall estimated tempo of a track in beats per minute (BPM).
+- _Valence_ : Spotify uses the word “valence” to measure whether a song is likely to make someone feel happy (higher valence) or sad (lower valence).
 
-Before any explanation, let's define the different attributes : 
-- Valence : Spotify uses the word “valence” to measure whether a song is likely to make someone feel happy (higher valence) or sad (lower valence).
-- Instrumentalness : This value represents the amount of vocals in the song. The closer it is to 1.0, the more instrumental the song is.
-- Liveness : This value describes the probability that the song was recorded with a live audience. According to the official documentation “a value above 0.8 provides strong likelihood that the track is live”.
-- Speechiness : “Speechiness detects the presence of spoken words in a track”. If the speechiness of a song is above 0.66, it is probably made of spoken words, a score between 0.33 and 0.66 is a song that may contain both music and words, and a score below 0.33 means the song does not have any speech.
-- Acousticness : This value describes how acoustic a song is. A score of 1.0 means the song is most likely to be an acoustic one.
-- Energy : “(energy) represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy”.
-- Danceability : “Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable”.
-- Loudness :  It refers to how loud or soft a sound seems to a listener. The loudness of sound is determined, in turn, by the intensity of the sound waves.
-- Tempo : The overall estimated tempo of a track in beats per minute (BPM)
 
 ![image](https://user-images.githubusercontent.com/115199874/229994975-89a45f07-92a1-442a-ba27-436cb222a385.png)
 
-
-
-
+The Application
 
 What does the graph tell us ?
 - Loudness and Tempo musics evolved in the same way
@@ -72,7 +70,7 @@ Also, Valence is positively correlated with Danceability and energy. Considering
 
 From the datas above, here a visualization how Energy and Loudness are positively correlated.
 
-## What artist do people listen to ?
+## What artists do people listen to?
 
 ![image](https://user-images.githubusercontent.com/115199874/229963812-4f369422-6037-4c8f-a15b-12bfb25e4aa0.png)
 
