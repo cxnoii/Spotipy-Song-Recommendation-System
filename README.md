@@ -47,7 +47,8 @@ Audio Features:
 - _Valence_ : Spotify uses the word “valence” to measure whether a song is likely to make someone feel happy (higher valence) or sad (lower valence).
 
 # Data Preprocessing
-i'm just a smalltown boy
+The following steps were taken to prepare the data for the KMeans clustering algorithm:
+
 ```python
 #Selects all records from 2010 to 2020.
 ten_yr_df=music_data_df.loc[(music_data_df['year']>=2010) & (music_data_df['year']<=2020)]
