@@ -19,7 +19,7 @@ import spotipy.util as util
 
 
 path = Path() / "Data" / "tenyear_cleaned.csv"
-tracks_df = pd.read_csv(path)
+tracks_df = pd.read_csv(path, index_col=[0])
 column_names = tracks_df.columns
 index = tracks_df.index
 
@@ -59,8 +59,10 @@ def add_song_to_df(song_features, tracks_df):
     song_features_df = pd.DataFrame(song_features, index=[0])
     new_df = pd.concat([song_features_df, tracks_df])
     new_df = new_df.set_index(['id'])
+
     
     return new_df
+
 
 #runs kmeans with user song in it
 def run_kmeans(tracks_df_w_new_song, track_id):
@@ -92,7 +94,7 @@ def recommended_songs_id(predictions, song_feature1, song_feature2, track_list):
     ckdtree = scipy.spatial.cKDTree(data_points)
 
     #k is the value of songs that it will recommend
-    song_recommendations = ckdtree.query([song_feature1, song_feature2],k=2)[1]
+    song_recommendations = ckdtree.query([song_feature1, song_feature2],k=10)[1]
 
     song_ids = track_list.iloc[song_recommendations,:].index.to_list()
 
@@ -146,8 +148,9 @@ def recommend_songs(song_name):
     print(recommended_songs)
     print(album_urls)
 
-    return recommended_songs, album_urls
+    # return recommended_songs, album_urls
 
+recommend_songs("kill bill by sza")
 #if you're running just this script, you need to pass in a song name to recommend_songs in this format 
 # {song_name} by {artist_name}
 
