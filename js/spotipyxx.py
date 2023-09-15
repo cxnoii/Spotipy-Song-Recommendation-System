@@ -60,7 +60,6 @@ def add_song_to_df(song_features, tracks_df):
     new_df = pd.concat([song_features_df, tracks_df])
     new_df = new_df.set_index(['id'])
 
-    
     return new_df
 
 
@@ -141,6 +140,7 @@ def recommend_songs(song_name):
 
     df_with_user_song = add_song_to_df(track_features, tracks_df)
     predictions_df = run_kmeans(df_with_user_song, track_id)
+
     song_ids = recommended_songs_id(predictions_df, song_feature1, song_feature2, df_with_user_song)
     recommended_songs, album_urls = get_song_info(song_ids)
 
@@ -148,14 +148,10 @@ def recommend_songs(song_name):
     print(recommended_songs)
     print(album_urls)
 
-    # return recommended_songs, album_urls
+    return recommended_songs, album_urls
 
-recommend_songs("kill bill by sza")
-#if you're running just this script, you need to pass in a song name to recommend_songs in this format 
-# {song_name} by {artist_name}
+#if you're running just this script, you need to pass in a song name to recommend_songs in this format:
+# recommend_songs("snooze by sza")
 
-
-# songs = recommend_songs("snooze by sza")
-# print(songs)
 
 
