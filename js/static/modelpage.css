@@ -54,18 +54,21 @@
     display: flex;
     align-items: center;
   }
+ 
   
+  /* this controls alignment of the song name */
   .song-image {
-    margin-right: 50%;
+    margin-right: 13.5%;
   }
   
+/* this controls the alignment of the album cover, increasing margin-left will move it to the left */
   .song-image img {
-    margin-left: 50%;
-    margin-right: 20%;
+    margin-left: 345%;
+    margin-right: 30%;
   }
   
   .song-container p {
-    margin-left: 20px;
+    margin-left: 30px;
     margin-bottom: 200px;
   }
   
