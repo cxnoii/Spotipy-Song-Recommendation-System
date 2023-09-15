@@ -48,8 +48,27 @@ Audio Features:
 
 # Data Preprocessing
 ```
-code?
+#Selects all records from 2010 to 2020.
+ten_yr_df=music_data_df.loc[(music_data_df['year']>=2010) & (music_data_df['year']<=2020)]
+ten_yr_df
 ```
+
+```
+#Dropping explicit and mode columns
+ten_yr_df = ten_yr_df.drop(['explicit', 'mode', 'key', "release_date", "popularity", "name", "year","artists"], axis=1, inplace=False)
+ten_yr_df.head(3)
+```
+
+```
+#Checks to see if any records are duplicated
+ten_yr_df.duplicated().value_counts()
+```
+
+```
+#Checks to see if any values are missing
+ten_yr_df.isnull().sum()
+```
+
 
 ![image](https://user-images.githubusercontent.com/115199874/229994975-89a45f07-92a1-442a-ba27-436cb222a385.png)
 
