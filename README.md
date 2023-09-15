@@ -56,6 +56,11 @@ ten_yr_df
 ```
 
 ```python
+False    21656
+dtype: int64
+```
+
+```python
 #Dropping explicit and mode columns
 ten_yr_df = ten_yr_df.drop(['explicit', 'mode', 'key', "release_date", "popularity", "name", "year","artists"], axis=1, inplace=False)
 ten_yr_df.head(3)
