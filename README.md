@@ -53,12 +53,11 @@ The following steps were taken to prepare the data for the KMeans clustering alg
 #Selects all records from 2010 to 2020.
 ten_yr_df=music_data_df.loc[(music_data_df['year']>=2010) & (music_data_df['year']<=2020)]
 ten_yr_df
-```
 
-```
 False    21656
 dtype: int64
 ```
+
 
 ```python
 #Dropping explicit and mode columns
