@@ -55,7 +55,7 @@ ten_yr_df=music_data_df.loc[(music_data_df['year']>=2010) & (music_data_df['year
 ten_yr_df
 ```
 
-```python
+```
 False    21656
 dtype: int64
 ```
