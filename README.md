@@ -47,24 +47,25 @@ Audio Features:
 - _Valence_ : Spotify uses the word “valence” to measure whether a song is likely to make someone feel happy (higher valence) or sad (lower valence).
 
 # Data Preprocessing
+i'm just a smalltown boy
 ```python
 #Selects all records from 2010 to 2020.
 ten_yr_df=music_data_df.loc[(music_data_df['year']>=2010) & (music_data_df['year']<=2020)]
 ten_yr_df
 ```
 
-```
+```python
 #Dropping explicit and mode columns
 ten_yr_df = ten_yr_df.drop(['explicit', 'mode', 'key', "release_date", "popularity", "name", "year","artists"], axis=1, inplace=False)
 ten_yr_df.head(3)
 ```
 
-```
+```python
 #Checks to see if any records are duplicated
 ten_yr_df.duplicated().value_counts()
 ```
 
-```
+```python
 #Checks to see if any values are missing
 ten_yr_df.isnull().sum()
 ```
