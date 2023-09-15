@@ -44,8 +44,10 @@ Audio Features:
 - _Loudness_ : Refers to how loud or soft a sound seems to a listener. The loudness of sound is determined, in turn, by the intensity of the sound waves.
 - _Tempo_ : The overall estimated tempo of a track in beats per minute (BPM).
 
+
 ![image](https://user-images.githubusercontent.com/115199874/229994975-89a45f07-92a1-442a-ba27-436cb222a385.png)
 
+The Application
 
 What does the graph tell us ?
 - Loudness and Tempo musics evolved in the same way
