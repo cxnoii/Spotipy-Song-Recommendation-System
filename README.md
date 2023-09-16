@@ -125,7 +125,7 @@ elbow
 The elbow method uses inertia values to plot against possible values of k. Inertia is the sum of squared distances between each data point and the centroid; this is an indicator of how well a dataset was clustered by K-Means. The optimal number for k is where the inertia values begin to flatten out, the elbow. In this project, a value of k=4 was used in the K-Means algorithm. Python's SciKit-Learn package was used in order to calculate the inertia values where it was plotted to view the elbow. 
 
 ## Preparing the data for KMeans
-The application prompts you to enter the name of a song, followed by the artist's name. Before we begin clustering, our target audio features for this song must be retrieved. These features are retrieved from the Spotify API where it is then concatenated with our existing dataset of songs. The name and artists values are located at a separate endpoint from the audio features, so the track_id is retrieved in a preceeding function. 
+The application prompts you to enter the name of a song, followed by the artist's name. Before we begin clustering, our target audio features for this song must be retrieved. These features are retrieved from the Spotify API where it is then concatenated with our existing dataset of songs. The name and artists values are located at a separate endpoint from the audio features, so the track_id is retrieved in a preceeding function, where it can then be used to obtain the following:
 
 ```python
 #accepts the track_id and returns our target features
@@ -147,6 +147,32 @@ def get_track_features(track_id):
                 , "speechiness":speechiness, "tempo":tempo, "valence":valence}
     
     return features
+```
+
+Once the dataframes are combined, KMeans can be performed. The data is first standardized by appplying a standard scalar in order to increase the performance of the model. This ensures that our model is not too heavily skewed by any potential outliers present in the data. After initializing the algorithm, each song is assigned to a cluster group based on the model's predictions, and the function will return a dataframe of tracks in its respective cluster group.
+
+```python
+#runs kmeans with user song in it
+def run_kmeans(tracks_df_w_new_song, track_id):
+    #preprocessing dataframe
+    column_names = tracks_df_w_new_song.columns
+    index = tracks_df_w_new_song.index
+    scaler = StandardScaler()
+    scaled_data = scaler.fit_transform(tracks_df_w_new_song)
+    tracks_df_scaled = pd.DataFrame(scaled_data, columns=column_names, index=index)
+
+    #running kmeans algorithm
+    k_model = KMeans(n_clusters=4, random_state=1)
+    predictions = k_model.fit_predict(tracks_df_scaled)
+    tracks_df_predictions = tracks_df_scaled.copy()
+    tracks_df_predictions["ClusterGroup"] = predictions
+
+    #now isolates data points by the cluster group of the user's song
+    user_song = tracks_df_predictions.loc[track_id]
+    cluster_group_number = int(user_song['ClusterGroup'])
+    user_song_cluster_group = tracks_df_predictions[tracks_df_predictions['ClusterGroup'] == cluster_group_number]
+
+    return user_song_cluster_group
 ```
 
 ## Demo
