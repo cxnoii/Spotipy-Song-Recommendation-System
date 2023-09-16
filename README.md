@@ -136,4 +136,4 @@ youtube video would be cool here
 
 [Spotify Web API](https://developer.spotify.com/documentation/web-api)
 
-[Spotipy Documentation](https://spotipy.readthedocs.io/en/2.22.1/)
+[SpotiPy Documentation](https://spotipy.readthedocs.io/en/2.22.1/)
