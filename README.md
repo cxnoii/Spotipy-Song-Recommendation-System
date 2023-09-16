@@ -125,7 +125,7 @@ The elbow method uses inertia values to plot against possible values of k. Inert
 
 
 ## Demo
-youtube video would be cool here
+insert[screen recording]
 
 # Data Sources 
 [List of Songs on Spotify 1921-2020](https://www.kaggle.com/datasets/ektanegi/spotifydata-19212020?resource=download)
