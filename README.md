@@ -196,7 +196,7 @@ def recommended_songs_id(predictions, song_feature1, song_feature2, track_list):
     return song_ids
 ```
 
-Below is a plot of the datapoints based on _danceability_ and _energy_. Consider that a user's song is located within cluster group 1, highlighted in red. The SciPy package will calculate the closest datapoints to the track's features within cluster group 1; the track_id's were then saved, where the track name, artist, and album cover can be retrieved from the Spotify API. 
+Below is a plot of the results of the clustering algorithm. Consider that a user's song is located within cluster group 1, highlighted in red. The SciPy package will calculate the closest datapoints to the track's features within cluster group 1. The track_id's were then saved, where the track name, artist, and album cover can then be retrieved from the Spotify API. 
 <p align="center">
  <img src="https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/cc2807fa-40b0-407f-bb34-e74a9f3d42de">
 </p>
