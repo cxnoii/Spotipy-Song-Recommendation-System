@@ -120,7 +120,7 @@ elbow
 <img src="https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/aa05d194-a1f3-4a9c-85cc-139964d7d8ed" width=600>
 </p>
 
-The elbow method uses inertia values to plot against possible values of k. Inertia is the sum of squared distances between each data point and the centroid; this is an indicator of how well a dataset was clustered by K-Means. The optimal number for k is where the inertia values begin to become linear, the elbow. In this project, a value of k=4 was used in the K-Means algorithm. Python's SciKit-Learn package was used in order to calculate the inertia values where it was plotted to view the elbow. 
+The elbow method uses inertia values to plot against possible values of k. Inertia is the sum of squared distances between each data point and the centroid; this is an indicator of how well a dataset was clustered by K-Means. The optimal number for k is where the inertia values begin to flatten out, the elbow. In this project, a value of k=4 was used in the K-Means algorithm. Python's SciKit-Learn package was used in order to calculate the inertia values where it was plotted to view the elbow. 
 
 
 
