@@ -33,7 +33,7 @@ Overall, the development of song and playlist prediction using machine learning 
 # The Dataset
 The Spotify dataset that we chose contains songs from the years 1921-2020. We chose to focus on a subset of the data, usings songs from the years 2010-2020 in order to relieve tension on the KMeans clustering algorithm. The Spotify API has a large variety of features documented for each track, such as the key signature, liveliness, mode, etc. Only numerical values were kept for the algorithm to consider. Listed below are the final audio features that were kept in the dataset for clustering.
 
-Audio Features:
+__Audio Features__:
 - _id_ : Unique identifier for each track.
 - _Acousticness_ : Describes how acoustic a song is. A score of 1.0 means the song is most likely to be an acoustic one.
 - _Danceability_ : Describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.
