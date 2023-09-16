@@ -47,7 +47,7 @@ __Audio Features__:
 - _Valence_ : Spotify uses the word “valence” to measure whether a song is likely to make someone feel happy (higher valence) or sad (lower valence).
 
 # Data Preprocessing
-The following steps were taken to prepare the data for the KMeans clustering algorithm:
+The following steps were taken to prepare the data for the KMeans clustering algorithm.
 
 ```python
 #Selects all records from 2010 to 2020.
@@ -57,7 +57,7 @@ ten_yr_df
 
 
 ```python
-#Dropping explicit and mode columns
+#Dropping all non-numerical, boolean, and variables that are ill suited for project need.
 ten_yr_df = ten_yr_df.drop(['explicit', 'mode', 'key', "release_date", "popularity", "name", "year","artists"], axis=1, inplace=False)
 ten_yr_df.head(3)
 ```
@@ -92,7 +92,26 @@ dtype: int64
 
 
 # KMeans Model
+The objective of the KMeans model is to group similar data points together based on certain features. In this project, the audio features of a user's track was retrieved from the Spotify API and KMeans was performed with the dataset of songs from the years 2010-2020. Clusters are formed by randomly selecting a record as the centroid and as new records are introduced, the centroids of a given cluster adjust. The number of clusters that are generated is determined by k, which was optimized in this project using the elbow method.
 
+```python
+# Create an empty list to store the inertia values
+k = list(range(1,12))
+inertia = []
+
+# Create a for loop to compute the inertia with each possible value of k
+for i in k:
+    k_model = KMeans(n_clusters=i, random_state=42, n_init="auto")
+    k_model.fit(tracks_df_scaled)
+    inertia.append(k_model.inertia_)
+
+# Create a dictionary with the data to plot the Elbow curve
+elbow_dict = {"k": k, "inertia": inertia}
+
+# Create a DataFrame with the data to plot the Elbow curve
+elbow_df = pd.DataFrame(elbow_dict)
+elbow_df.head()
+```
 
 ## Demo
 youtube video would be cool here
