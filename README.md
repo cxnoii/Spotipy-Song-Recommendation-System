@@ -176,10 +176,10 @@ def run_kmeans(tracks_df_w_new_song, track_id):
 ```
 
 ### Recommendations
-With a dataframe consisting of tracks within the user's cluster group, songs are recommended by creating a plot of two of the audio features that the user is most interested in. In this project,  _danceability_ and _energy_ were chosen for this step. The track_id's of ten datapoints that have the lowest distance to the user's song on the plot are then saved, where it was used to retrieve the name of the track and it's artist, as well as the album cover.
+With a dataframe consisting of tracks within the user's cluster group, songs are recommended by creating a plot of two of the audio features that the user is most interested in. In this project,  _danceability_ and _energy_ were chosen for this step. The track_id's of ten datapoints that have the lowest distance to the user's song on the plot was determined using Python's SciPy spatial library. 
 
 ```python
-#recommends songs based on closest datapoints, but doesn't take into account for the clustergroup they're in 
+#recommends songs based on closest datapoints
 def recommended_songs_id(predictions, song_feature1, song_feature2, track_list):
     feature1 = predictions['danceability']
     feature2 = predictions['energy']
