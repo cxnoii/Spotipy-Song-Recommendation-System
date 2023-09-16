@@ -124,7 +124,7 @@ elbow
 
 The elbow method uses inertia values to plot against possible values of k. Inertia is the sum of squared distances between each data point and the centroid; this is an indicator of how well a dataset was clustered by K-Means. The optimal number for k is where the inertia values begin to flatten out, the elbow. In this project, a value of k=4 was used in the K-Means algorithm. Python's SciKit-Learn package was used in order to calculate the inertia values where it was plotted to view the elbow. 
 
-## Preparing the data for KMeans
+### Preparing the data for KMeans
 The application prompts you to enter the name of a song, followed by the artist's name. Before we begin clustering, our target audio features for this song must be retrieved. These features are retrieved from the Spotify API where it is then concatenated with our existing dataset of songs. The name and artists values are located at a separate endpoint from the audio features, so the track_id is retrieved in a preceeding function, where it can then be used to obtain the following:
 
 ```python
@@ -173,6 +173,28 @@ def run_kmeans(tracks_df_w_new_song, track_id):
     user_song_cluster_group = tracks_df_predictions[tracks_df_predictions['ClusterGroup'] == cluster_group_number]
 
     return user_song_cluster_group
+```
+
+### Recommendations
+With a dataframe consisting of tracks within the user's cluster group, songs are recommended by creating a plot of two of the audio features that the user is most interested in. In this project,  _danceability_ and _energy_ were chosen for this step. The track_id's of ten datapoints that have the lowest distance to the user's song on the plot are then saved, where it was used to retrieve the name of the track and it's artist, as well as the album cover.
+
+```python
+#gets track_name, artist, and album name with a list of track_ids 
+def get_song_info(song_id_list):
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth())
+    recommended_songs_list = []
+    album_urls_list = []
+    for id in song_id_list:
+        track = sp.track(id)
+        song_name = track["name"]
+        song_artist = track["artists"][0]["name"]
+        album_url = track['album']['images'][1]['url']
+
+        recommended_song = f"{song_name} by {song_artist}"
+        recommended_songs_list.append(recommended_song)
+        album_urls_list.append(album_url)
+    
+    return recommended_songs_list, album_urls_list
 ```
 
 ## Demo
