@@ -124,8 +124,29 @@ elbow
 
 The elbow method uses inertia values to plot against possible values of k. Inertia is the sum of squared distances between each data point and the centroid; this is an indicator of how well a dataset was clustered by K-Means. The optimal number for k is where the inertia values begin to flatten out, the elbow. In this project, a value of k=4 was used in the K-Means algorithm. Python's SciKit-Learn package was used in order to calculate the inertia values where it was plotted to view the elbow. 
 
-```
+## Preparing the data for KMeans
+The application prompts you to enter the name of a song, followed by the artist's name. Before we begin clustering, our target audio features for this song must be retrieved. These features are retrieved from the Spotify API where it is then concatenated with our existing dataset of songs. The name and artists values are located at a separate endpoint from the audio features, so the track_id is retrieved in a preceeding function. 
 
+```python
+#accepts the track_id and returns our target features
+def get_track_features(track_id):
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth())
+    feature_search = sp.audio_features(tracks=track_id)
+    acousticness = feature_search[0]['acousticness']
+    danceability = feature_search[0]['danceability']
+    duration_ms = feature_search[0]['duration_ms']
+    energy = feature_search[0]['energy']
+    instrumentalness = feature_search[0]['instrumentalness']
+    liveness = feature_search[0]['liveness']
+    loudness = feature_search[0]['loudness']
+    speechiness = feature_search[0]['speechiness']
+    tempo = feature_search[0]['tempo']
+    valence = feature_search[0]['valence']
+    features = {"id": track_id, "acousticness":acousticness, "danceability":danceability, "duration_ms":duration_ms
+                ,"energy":energy, "instrumentalness":instrumentalness, "liveness":liveness, "loudness":loudness
+                , "speechiness":speechiness, "tempo":tempo, "valence":valence}
+    
+    return features
 ```
 
 ## Demo
