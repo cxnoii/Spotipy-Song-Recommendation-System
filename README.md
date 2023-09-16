@@ -91,37 +91,11 @@ dtype: int64
 ```
 
 
-![image](https://user-images.githubusercontent.com/115199874/229994975-89a45f07-92a1-442a-ba27-436cb222a385.png)
+# KMeans Model
 
-The Application
 
-What does the graph tell us ?
-- Loudness and Tempo musics evolved in the same way
-- Energy and Valence are pretty similar 
-- Danceability and Speechiness are more or less close
-
-## Correlation 
-In order to go further in the analysis, we did a correlation visualization :
-
-![image](https://user-images.githubusercontent.com/115199874/229678609-c3907610-5d72-40ae-a0ef-6c4abcaead95.png)
-
-It seems like Energy and Loudness are highly positively correlated.
-Also, Valence is positively correlated with Danceability and energy. Considering happy songs make people energetic and want to dance, the correlation make a lot sense. *Interestingly, speechiness and loudness are negatively correlated with each other.
-
-### In-depth analysis
-
-![image](https://user-images.githubusercontent.com/115199874/229679875-efb4de27-8ab9-48aa-aa72-becf93dc1271.png)
-
-From the datas above, here a visualization how Energy and Loudness are positively correlated.
-
-## What artists do people listen to?
-
-![image](https://user-images.githubusercontent.com/115199874/229963812-4f369422-6037-4c8f-a15b-12bfb25e4aa0.png)
-
-## What kind of music do people listen to ?
-
-![image](https://user-images.githubusercontent.com/115199874/229966141-ca8f2e5d-3ecd-4e37-acb1-4bd38847912f.png)
-
+## Demo
+youtube video would be cool here
 
 # Data Sources 
 [List of Songs on Spotify 1921-2020](https://www.kaggle.com/datasets/ektanegi/spotifydata-19212020?resource=download)
