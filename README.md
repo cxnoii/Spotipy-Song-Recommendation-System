@@ -90,6 +90,8 @@ dtype: int64
 # KMeans Model
 The objective of the KMeans model is to group similar data points together based on certain features. In this project, the audio features of a user's track was retrieved from the Spotify API and KMeans was performed with the dataset of songs from the years 2010-2020. Clusters are formed by randomly selecting a record as the centroid and as new records are introduced, the centroids of a given cluster adjust. The number of clusters that are generated is determined by k, which was optimized in this project using the elbow method.
 
+##Calculating optimal number of clusters:
+
 ```python
 # Creates an empty list to store the inertia values
 k = list(range(1,12))
