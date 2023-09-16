@@ -95,23 +95,35 @@ dtype: int64
 The objective of the KMeans model is to group similar data points together based on certain features. In this project, the audio features of a user's track was retrieved from the Spotify API and KMeans was performed with the dataset of songs from the years 2010-2020. Clusters are formed by randomly selecting a record as the centroid and as new records are introduced, the centroids of a given cluster adjust. The number of clusters that are generated is determined by k, which was optimized in this project using the elbow method.
 
 ```python
-# Create an empty list to store the inertia values
+# Creates an empty list to store the inertia values
 k = list(range(1,12))
 inertia = []
 
-# Create a for loop to compute the inertia with each possible value of k
+# Creates a for loop to compute the inertia with each possible value of k
 for i in k:
     k_model = KMeans(n_clusters=i, random_state=42, n_init="auto")
     k_model.fit(tracks_df_scaled)
     inertia.append(k_model.inertia_)
 
-# Create a dictionary with the data to plot the Elbow curve
+# Creates a dictionary with the data to plot the Elbow curve
 elbow_dict = {"k": k, "inertia": inertia}
 
-# Create a DataFrame with the data to plot the Elbow curve
+# Creates a DataFrame with the data to plot the Elbow curve
 elbow_df = pd.DataFrame(elbow_dict)
 elbow_df.head()
+
+#Plots k vs. inertia to visualize the elbow
+elbow = elbow_df.hvplot.line(
+    x='k',
+    y='inertia',
+    xticks=k,
+    title='Elbow Curve using Original Scaled Data')
+elbow
 ```
+<p align="center">
+<img src="https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/aa05d194-a1f3-4a9c-85cc-139964d7d8ed">
+</p>
+
 
 ## Demo
 youtube video would be cool here
