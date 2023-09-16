@@ -25,11 +25,6 @@ Once a machine learning model has been trained, it can be used to predict the ty
 Overall, the development of song and playlist prediction using machine learning has the potential to revolutionize the way that people discover and enjoy new music. By providing personalized recommendations based on individual listening habits and preferences, this technology can help users to discover new artists and genres, and to create playlists that reflect their unique musical tastes and moods.
 
 
-
-# Research Questions
-1. What is the most popular type of music?
-2. Based on user preferences, can we predict other songs that users may enjoy?
-
 # The Dataset
 The Spotify dataset that we chose contains songs from the years 1921-2020. We chose to focus on a subset of the data, usings songs from the years 2010-2020 in order to relieve tension on the KMeans clustering algorithm. The Spotify API has a large variety of features documented for each track, such as the key signature, liveliness, mode, etc. Only numerical values were kept for the algorithm to consider. Listed below are the final audio features that were kept in the dataset for clustering.
 
