@@ -57,6 +57,7 @@ ten_yr_df = ten_yr_df.drop(['explicit', 'mode', 'key', "release_date", "populari
 ten_yr_df.head(3)
 ```
 
+After isolating the target audio features, the new dataset was checked for duplicate records or missing values to prevent any errors.
 ```python
 #Checks to see if any records are duplicated
 ten_yr_df.duplicated().value_counts()
