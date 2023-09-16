@@ -175,6 +175,10 @@ def run_kmeans(tracks_df_w_new_song, track_id):
     return user_song_cluster_group
 ```
 
+<p align="center">
+ <img src="https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/7ac3e8a8-971e-44c2-adb6-c91462381164>
+</p>
+
 ### Recommendations
 With a dataframe consisting of tracks within the user's cluster group, songs are recommended by creating a plot of two of the audio features that the user is most interested in. In this project,  _danceability_ and _energy_ were chosen for this step. The track_id's of ten datapoints that have the lowest distance to the user's song on the plot was determined using Python's SciPy spatial library. 
 
