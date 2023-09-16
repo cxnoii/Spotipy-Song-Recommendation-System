@@ -121,7 +121,7 @@ elbow = elbow_df.hvplot.line(
 elbow
 ```
 <p align="center">
-<img src="https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/aa05d194-a1f3-4a9c-85cc-139964d7d8ed" width=400>
+<img src="https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/aa05d194-a1f3-4a9c-85cc-139964d7d8ed" width=600>
 </p>
 
 
