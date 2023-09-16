@@ -149,6 +149,7 @@ def get_track_features(track_id):
     return features
 ```
 
+### Initializing the model
 Once the dataframes are combined, KMeans can be performed. The data is first standardized by appplying a standard scalar in order to increase the performance of the model. This ensures that our model is not too heavily skewed by any potential outliers present in the data. After initializing the algorithm, each song is assigned to a cluster group based on the model's predictions, and the function will return a dataframe of tracks in its respective cluster group.
 
 ```python
@@ -194,8 +195,10 @@ def recommended_songs_id(predictions, song_feature1, song_feature2, track_list):
 
     return song_ids
 ```
+
+Below is a plot of the datapoints based on _danceability_ and _energy_. Consider that a user's song is located within cluster group 1, highlighted in red. The SciPy package will calculate the closest datapoints to the track's features within cluster group 1; the track_id's were then saved, where the track name, artist, and album cover can be retrieved from the Spotify API. 
 <p align="center">
- <img src="https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/7ac3e8a8-971e-44c2-adb6-c91462381164">
+ <img src="https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/cc2807fa-40b0-407f-bb34-e74a9f3d42de">
 </p>
 
 ## Demo
