@@ -53,10 +53,6 @@ The following steps were taken to prepare the data for the KMeans clustering alg
 #Selects all records from 2010 to 2020.
 ten_yr_df=music_data_df.loc[(music_data_df['year']>=2010) & (music_data_df['year']<=2020)]
 ten_yr_df
-
-output:
-False    21656
-dtype: int64
 ```
 
 
@@ -69,11 +65,29 @@ ten_yr_df.head(3)
 ```python
 #Checks to see if any records are duplicated
 ten_yr_df.duplicated().value_counts()
+
+out:
+False    21656
+dtype: int64
 ```
 
 ```python
 #Checks to see if any values are missing
 ten_yr_df.isnull().sum()
+
+out:
+acousticness        0
+danceability        0
+duration_ms         0
+energy              0
+id                  0
+instrumentalness    0
+liveness            0
+loudness            0
+speechiness         0
+tempo               0
+valence             0
+dtype: int64
 ```
 
 
