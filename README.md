@@ -179,22 +179,19 @@ def run_kmeans(tracks_df_w_new_song, track_id):
 With a dataframe consisting of tracks within the user's cluster group, songs are recommended by creating a plot of two of the audio features that the user is most interested in. In this project,  _danceability_ and _energy_ were chosen for this step. The track_id's of ten datapoints that have the lowest distance to the user's song on the plot are then saved, where it was used to retrieve the name of the track and it's artist, as well as the album cover.
 
 ```python
-#gets track_name, artist, and album name with a list of track_ids 
-def get_song_info(song_id_list):
-    sp = spotipy.Spotify(auth_manager=SpotifyOAuth())
-    recommended_songs_list = []
-    album_urls_list = []
-    for id in song_id_list:
-        track = sp.track(id)
-        song_name = track["name"]
-        song_artist = track["artists"][0]["name"]
-        album_url = track['album']['images'][1]['url']
+#recommends songs based on closest datapoints, but doesn't take into account for the clustergroup they're in 
+def recommended_songs_id(predictions, song_feature1, song_feature2, track_list):
+    feature1 = predictions['danceability']
+    feature2 = predictions['energy']
+    data_points = np.column_stack([feature1, feature2])
+    ckdtree = scipy.spatial.cKDTree(data_points)
 
-        recommended_song = f"{song_name} by {song_artist}"
-        recommended_songs_list.append(recommended_song)
-        album_urls_list.append(album_url)
-    
-    return recommended_songs_list, album_urls_list
+    #k is the value of songs that it will recommend
+    song_recommendations = ckdtree.query([song_feature1, song_feature2],k=10)[1]
+
+    song_ids = track_list.iloc[song_recommendations,:].index.to_list()
+
+    return song_ids
 ```
 
 ## Demo
