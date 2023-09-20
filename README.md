@@ -204,7 +204,38 @@ Below is a plot of the results of the clustering algorithm. Consider that a user
  <img src="https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/cc2807fa-40b0-407f-bb34-e74a9f3d42de">
 </p>
 
+# Flask
+The Flask webframe work was used in conjunction with HTML in order to configure the web page. The endpoint below is responsible for receiving data from the search bar, where the input is passed into the KMeans script responsible for creating the cluster groups and returning the recommended songs as well as the album cover. A list of tuples containing the recommended song with it's corresponding artist and album cover is then created and passed into the HTML script where it can be placed on the webpage. 
 
+```python
+#After pressing submit with song, this url runs the spotipyxx script to return song names and album urls
+@app.route("/recommend_songs", methods=['POST'])
+def process_input():
+    input_data = request.form['input']
+    recommended_songs, album_urls = spotipyxx.recommend_songs(input_data)
+
+    #Creates a list of tuples with recommended songs and album urls for ease of tag creations (see modelpage.html)
+    song_with_url = list(zip(recommended_songs, album_urls))
+    
+    return render_template("/modelpage.html", results=song_with_url)
+```
+
+### HTML
+
+```html
+    <!-- For each song - album_url pair in the list of tuples, the album_url is placed into the song_image class & song name is placed in a p tag -->
+    {% for song, album_url in results %}
+    <div class="song-container">
+
+      <div class="song-image">
+        <img src="{{ album_url }}" alt="Song Image">
+        <!-- <img src="https://i.scdn.co/image/ab67616d00001e02ff9ca10b55ce82ae553c8228" alt="Song Image"> -->
+      </div>
+
+        <p>{{ song }}</p>
+    </div>
+    {% endfor %}
+```
 
 # Data Sources 
 [List of Songs on Spotify 1921-2020](https://www.kaggle.com/datasets/ektanegi/spotifydata-19212020?resource=download)
