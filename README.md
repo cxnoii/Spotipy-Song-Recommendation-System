@@ -202,7 +202,9 @@ Below is a plot of the results of the clustering algorithm. Consider that a user
 </p>
 
 ## Demo
-insert[screen recording]
+
+https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/ca1ebfa3-59ce-478c-bd9b-88217791702e
+
 
 # Data Sources 
 [List of Songs on Spotify 1921-2020](https://www.kaggle.com/datasets/ektanegi/spotifydata-19212020?resource=download)
