@@ -221,7 +221,7 @@ def process_input():
 ```
 
 ### HTML
-
+A div with the song-container tag is created for each tuple in the list, where the recommended song and the album cover are placed. The formatting and spacing of each of the song containers can be viewed in the modelpage.css file located in the js/static folder.
 ```html
     <!-- For each song - album_url pair in the list of tuples, the album_url is placed into the song_image class & song name is placed in a p tag -->
     {% for song, album_url in results %}
