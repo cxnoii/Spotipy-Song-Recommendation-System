@@ -24,6 +24,9 @@ Once a machine learning model has been trained, it can be used to predict the ty
 
 Overall, the development of song and playlist prediction using machine learning has the potential to revolutionize the way that people discover and enjoy new music. By providing personalized recommendations based on individual listening habits and preferences, this technology can help users to discover new artists and genres, and to create playlists that reflect their unique musical tastes and moods.
 
+## Demo
+
+https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/ca1ebfa3-59ce-478c-bd9b-88217791702e
 
 # The Dataset
 The Spotify dataset that we chose contains songs from the years 1921-2020. We chose to focus on a subset of the data, usings songs from the years 2010-2020 in order to relieve tension on the KMeans clustering algorithm. The Spotify API has a large variety of features documented for each track, such as the key signature, liveliness, mode, etc. Only numerical values were kept for the algorithm to consider. Listed below are the final audio features that were kept in the dataset for clustering. It should be noted that KMeans considers two variables and the two that were chosen to focus on are _danceability_ and _energy_. Recommendations vary based on the two variables chosen for clustering.
@@ -201,9 +204,6 @@ Below is a plot of the results of the clustering algorithm. Consider that a user
  <img src="https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/cc2807fa-40b0-407f-bb34-e74a9f3d42de">
 </p>
 
-## Demo
-
-https://github.com/cxnoii/Spotipy-Song-Recommendation-System/assets/114107454/ca1ebfa3-59ce-478c-bd9b-88217791702e
 
 
 # Data Sources 
